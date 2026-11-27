@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Қолымнан келеді! — Ұсақ моторика</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#253047}
+header{background:linear-gradient(135deg,#5b6ee1,#7b61c9);color:#fff;padding:42px 7% 50px}
+header h1{font-size:38px;margin:0 0 10px}header p{font-size:17px;max-width:720px;line-height:1.6}
+nav{background:#fff;padding:14px 7%;display:flex;gap:10px;flex-wrap:wrap;position:sticky;top:0;z-index:2;box-shadow:0 2px 12px #00000010}
+nav button,.filter button{border:0;background:#eef0f8;padding:10px 16px;border-radius:20px;cursor:pointer;color:#34405c}
+nav button:hover,.filter button.active{background:#5b6ee1;color:#fff}
+main{max-width:1200px;margin:35px auto;padding:0 20px}.intro{background:#fff;border-radius:20px;padding:28px;margin-bottom:25px}
+h2{margin-top:0}.filters{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.filter button{border:1px solid #e1e5f0;background:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 5px 20px #26344a12;transition:.2s}
+.card:hover{transform:translateY(-3px)}.pic{height:135px;background:linear-gradient(135deg,#e8ecff,#f5eefe);display:flex;align-items:center;justify-content:center;font-size:58px}
+.card-body{padding:20px}.card h3{margin:0 0 8px}.meta{font-size:13px;color:#66708a;margin:8px 0 15px}
+.card p{line-height:1.5;font-size:14px}.tag{display:inline-block;background:#eef0f8;border-radius:14px;padding:5px 9px;font-size:12px;margin:3px}
+.more{border:0;background:#5b6ee1;color:white;padding:10px 14px;border-radius:10px;cursor:pointer}
+.details{display:none;padding:0 20px 20px;border-top:1px solid #eee}.details p{margin-bottom:8px}
+footer{margin-top:45px;background:#27314b;color:#fff;padding:28px 7%;font-size:13px;line-height:1.6}
+.note{background:#fff7df;border-left:4px solid #e8b84d;padding:14px 16px;border-radius:10px;margin-top:18px}
+</style>
+</head>
+<body>
+<header>
+<h1>🖐️ ҚОЛЫМНАН КЕЛЕДІ!</h1>
+<p>Тірек-қимыл аппараты бұзылған балалардың ұсақ моторикасын дамытуға арналған интерактивті жаттығулар жинағы.</p>
+</header>
+
+<nav>
+<button onclick="scrollToId('home')">🏠 Басты бет</button>
+<button onclick="scrollToId('exercises')">🖐️ Жаттығулар</button>
+<button onclick="filterCards('all')">📚 Барлығы</button>
+<button onclick="filterCards('ойын')">🎲 Ойындар</button>
+<button onclick="filterCards('шығармашылық')">🎨 Шығармашылық</button>
+<button onclick="filterCards('күнделікті')">👕 Күнделікті дағдылар</button>
+</nav>
+
+<main>
+<section id="home" class="intro">
+<h2>Сайттың мақсаты</h2>
+<p>Бұл жинақ баланың қол және саусақ қимылдарын, қол-көз үйлесімділігін, дәлдігін және күнделікті әрекеттерге қажетті дағдыларын ойын және практикалық тапсырмалар арқылы дамытуға бағытталған.</p>
+<div class="note">⚠️ Жаттығулар баланың жеке мүмкіндігіне бейімделеді. Ауырсыну, қатты шаршау немесе жайсыздық байқалса, жаттығуды тоқтату қажет.</div>
+</section>
+
+<section id="exercises">
+<h2>Жаттығулар жинағы</h2>
+<div class="filters">
+<button class="active" onclick="filterCards('all',this)">Барлығы</button>
+<button onclick="filterCards('жеңіл',this)">🟢 Жеңіл</button>
+<button onclick="filterCards('орташа',this)">🟡 Орташа</button>
+<button onclick="filterCards('күрделі',this)">🔴 Күрделі</button>
+</div>
+
+<div class="grid">
+
+<div class="card" data-tags="жеңіл ойын">
+<div class="pic">🔵</div><div class="card-body">
+<h3>Моншақтарды жіпке өткізу</h3><div class="meta">🟢 Жеңіл · 5–10 минут</div>
+<p>Ірі моншақтарды жіпке кезекпен өткізу.</p><span class="tag">дәлдік</span><span class="tag">көз-қол үйлесімі</span>
+<br><button class="more" onclick="toggle(this)">Толығырақ</button>
+<div class="details"><p><b>Мақсаты:</b> саусақтардың дәл қозғалысын және қол-көз үйлесімділігін дамыту.</p><p><b>Құралдар:</b> ірі моншақтар, жіп.</p><p><b>Жеңілдету:</b> моншақтарды үлкейту.</p><p><b>Күрделендіру:</b> түстер бойынша белгілі ретпен өткізу.</p></div>
+</div></div>
+
+<div class="card" data-tags="жеңіл ойын">
+<div class="pic">🧩</div><div class="card-body">
+<h3>Пішіндерді орнына қою</h3><div class="meta">🟢 Жеңіл · 5 минут</div>
+<p>Әртүрлі пішіндерді сәйкес ұяшықтарға орналастыру.</p><span class="tag">үйлестіру</span>
+<br><button class="more" onclick="toggle(this)">Толығырақ</button>
+<div class="details"><p><b>Мақсаты:</b> затты ұстау, бағыттау және дәл орналастыру.</p><p><b>Құралдар:</b> ірі пішіндер немесе сортер.</p></div>
+</div></div>
+
+<div class="card" data-tags="жеңіл күнделікті">
+<div class="pic">🫙</div><div class="card-body">
+<h3>Қақпақты ашу-жабу</h3><div class="meta">🟢 Жеңіл · 5 минут</div>
+<p>Әртүрлі көлемдегі қақпақтарды ашып, қайта жабу.</p><span class="tag">саусақ күші</span>
+<br><button class="more" onclick="toggle(this)">Толығырақ</button>
+<div class="details"><p><b>Мақсаты:</b> ұстау күшін және білезік қозғалысын дамыту.</p><p><b>Қауіпсіздік:</b> өткір жиегі жоқ ыдыстарды пайдалану.</p></div>
+</div></div>
+
+<div class="card" data-tags="орташа шығармашылық">
+<div class="pic">🟣</div><div class="card-body">
+<h3>Ермексазбен домалақ жасау</h3><div class="meta">🟡 Орташа · 7–10 минут</div>
+<p>Ермексазды алақан мен саусақтардың көмегімен домалақтау.</p><span class="tag">саусақ күші</span><span class="tag">икемділік</span>
+<br><button class="more" onclick="toggle(this)">Толығырақ</button>
+<div class="details"><p><b>Мақсаты:</b> саусақ пен алақан бұлшықеттерінің белсенділігін арттыру.</p><p><b>Күрделендіру:</b> бірнеше домалақтан қарапайым фигура құрастыру.</p></div>
+</div></div>
+
+<div class="card" data-tags="орташа шығармашылық">
+<div class="pic">✂️</div><div class="card-body">
+<h3>Қағазды жыртып, жапсыру</h3><div class="meta">🟡 Орташа · 10 минут</div>
+<p>Түрлі түсті қағазды бөліктерге жыртып, дайын үлгіге жапсыру.</p><span class="tag">екі қол</span><span class="tag">дәлдік</span>
+<br><button class="more" onclick="toggle(this)">Толығырақ</button>
+<div class="details"><p><b>Мақсаты:</b> екі қолдың үйлесімді жұмысын және саусақ қозғалысын дамыту.</p><p><b>Жеңілдету:</b> алдын ала ірі бөліктер дайындау.</p></div>
+</div></div>
+
+<div class="card" data-tags="орташа ойын">
+<div class="pic">🧱</div><div class="card-body">
+<h3>Конструктор құрастыру</h3><div class="meta">🟡 Орташа · 10 минут</div>
+<p>Ірі бөлшектерден қарапайым мұнара немесе фигура құрастыру.</p><span class="tag">екі қол</span><span class="tag">жоспарлау</span>
+<br><button class="more" onclick="toggle(this)">Толығырақ</button>
+<div class="details"><p><b>Мақсаты:</b> екі қолды бірге қолдану және ұсақ қимылдарды бақылау.</p><p><b>Күрделендіру:</b> дайын үлгі бойынша құрастыру.</p></div>
+</div></div>
+
+<div class="card" data-tags="орташа күнделікті">
+<div class="pic">👕</div><div class="card-body">
+<h3>Түймені тағу</h3><div class="meta">🟡 Орташа · 5–10 минут</div>
+<p>Үлкен түймені тесіктен өткізіп, қайта шығару.</p><span class="tag">күнделікті дағды</span>
+<br><button class="more" onclick="toggle(this)">Толығырақ</button>
+<div class="details"><p><b>Мақсаты:</b> киіну кезіндегі дербестікті дамыту.</p><p><b>Жеңілдету:</b> үлкен түйме және кең тесік қолдану.</p></div>
+</div></div>
+
+<div class="card" data-tags="күрделі күнделікті">
+<div class="pic">🧵</div><div class="card-body">
+<h3>Бауды тесіктерден өткізу</h3><div class="meta">🔴 Күрделі · 10–15 минут</div>
+<p>Бауды тақтадағы тесіктерден белгілі ретпен өткізу.</p><span class="tag">дәлдік</span><span class="tag">екі қол</span>
+<br><button class="more" onclick="toggle(this)">Толығырақ</button>
+<div class="details"><p><b>Мақсаты:</b> екі қолдың үйлесімді жұмысын және қимыл ретін сақтау қабілетін дамыту.</p><p><b>Жеңілдету:</b> тесіктерді үлкейту және арақашықтығын арттыру.</p></div>
+</div></div>
+
+<div class="card" data-tags="күрделі шығармашылық">
+<div class="pic">✏️</div><div class="card-body">
+<h3>Сызық бойымен жүргізу</h3><div class="meta">🔴 Күрделі · 5–10 минут</div>
+<p>Қарындашты белгіленген сызық бойымен жүргізу.</p><span class="tag">жазуға дайындық</span><span class="tag">бақылау</span>
+<br><button class="more" onclick="toggle(this)">Толығырақ</button>
+<div class="details"><p><b>Мақсаты:</b> қарындашты басқару және қол қозғалысын бақылау.</p><p><b>Жеңілдету:</b> қалың сызықтардан бастау.</p></div>
+</div></div>
+
+<div class="card" data-tags="жеңіл ойын">
+<div class="pic">🟡</div><div class="card-body">
+<h3>Заттарды түсіне қарай сұрыптау</h3><div class="meta">🟢 Жеңіл · 5–7 минут</div>
+<p>Заттарды қызыл, сары, көк сияқты түстер бойынша топтастыру.</p><span class="tag">ұстау</span><span class="tag">сұрыптау</span>
+<br><button class="more" onclick="toggle(this)">Толығырақ</button>
+<div class="details"><p><b>Мақсаты:</b> саусақ пен алақан бұлшықеттерінің белсенділігін арттыру.</p><p><b>Күрделендіру:</b> бірнеше домалақтан қарапайым фигура құрастыру.</p></div>
+</div></div>
+
+<div class="card" data-tags="орташа ойын">
+<div class="pic">🧩</div><div class="card-body">
+<h3>Үлкен пазл құрастыру</h3><div class="meta">🟡 Орташа · 10 минут</div>
+<p>Ірі бөлшектерден қарапайым суретті жинау.</p><span class="tag">үйлестіру</span><span class="tag">жоспарлау</span>
+<br><button class="more" onclick="toggle(this)">Толығырақ</button>
+<div class="details"><p><b>Мақсаты:</b> бөлшектерді ұстау, бұру және сәйкестендіру.</p></div>
+</div></div>
+
+<div class="card" data-tags="күрделі күнделікті">
+<div class="pic">🥄</div><div class="card-body">
+<h3>Қасықты дұрыс ұстау</h3><div class="meta">🔴 Күрделі · 5–10 минут</div>
+<p>Қасықты тұрақты ұстап, оны белгіленген орынға жеткізу.</p><span class="tag">күнделікті дағды</span><span class="tag">бақылау</span>
+<br><button class="more" onclick="toggle(this)">Толығырақ</button>
+<div class="details"><p><b>Мақсаты:</b> тамақтану кезіндегі қол қимылын және дербестікті дамыту.</p><p><b>Ескерту:</b> тапсырма баланың жеке қозғалыс мүмкіндігіне бейімделеді.</p></div>
+</div></div>
+
+</div>
+</section>
+</main>
+
+<footer>
+<b>Педагогке арналған ескерту:</b> жаттығулар баланың жеке мүмкіндіктеріне бейімделуі керек. Бұл сайт оқу-әдістемелік мақсатта жасалған; нақты баланың қозғалыс ерекшеліктері бойынша маманның ұсынымдары басшылыққа алынады.
+</footer>
+
+<script>
+function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:"smooth"});}
+function toggle(btn){let d=btn.nextElementSibling;d.style.display=d.style.display==="block"?"none":"block";btn.textContent=d.style.display==="block"?"Жабу":"Толығырақ";}
+function filterCards(tag,btn){
+document.querySelectorAll(".card").forEach(c=>{c.style.display=(tag==="all"||c.dataset.tags.includes(tag))?"block":"none";});
+document.querySelectorAll(".filter button").forEach(b=>b.classList.remove("active"));
+if(btn)btn.classList.add("active");
+}
+</script>
+</body>
+</html>
